@@ -29,27 +29,34 @@ The Wine dataset contains 178 samples of different wines, with 13 features that 
 
 The Boston Housing dataset contains information about houses in Boston and their corresponding median values. It consists of 506 samples, with 13 features related to the houses and the target variable being the median value of owner-occupied homes.
 
-## How to Use
+## Usage with scikit-learn Built-in Datasets
+In the Python scripts (iris_decision_tree.py, wine_decision_tree.py, and boston_decision_tree.py), the datasets are loaded using scikit-learn's built-in datasets. This makes it easier to use the datasets without downloading them separately.
 
-1. Clone the repository to your local machine:
+Here's an example of how to load the Iris dataset in the iris_decision_tree.py script:
+```
+from sklearn.datasets import load_iris
 
-```bash
-git clone https://github.com/SGGODE/Decision_Tree_RC.git
+# Load the Iris dataset
+iris = load_iris()
+X = iris.data
+y = iris.target
 ```
-2. Navigate to the project directory:
+Similarly, you can load the Wine dataset in the wine_decision_tree.py script:
 ```
-cd project_dir
+from sklearn.datasets import load_wine
+
+# Load the Wine dataset
+wine = load_wine()
+X = wine.data
+y = wine.target
 ```
-3. Run the Python script for the Iris dataset:
+And load the Boston dataset in the boston_decision_tree.py script:
 ```
-python iris_decision_tree.py
+from sklearn.datasets import load_boston
+
+# Load the Boston dataset
+boston = load_boston()
+X = boston.data
+y = boston.target
 ```
-4. Run the Python script for the Wine dataset:
-```
-python wine_decision_tree.py
-```
-5. Run the Python script for the Boston dataset:
-```
-python boston_decision_tree.py
-```
-The decision tree models will be trained and evaluated on the respective datasets. The results, including accuracy (for classification tasks) and mean squared error (for regression tasks), will be displayed on the console.
+The rest of the code in each script demonstrates how to train and evaluate a decision tree model on the respective dataset using scikit-learn's DecisionTreeClassifier for classification tasks and DecisionTreeRegressor for regression tasks.
